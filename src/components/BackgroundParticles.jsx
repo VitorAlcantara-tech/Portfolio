@@ -12,7 +12,8 @@ export default function BackgroundParticles() {
     <Particles
       id="tsparticles"
       init={particlesInit}
-      className="absolute inset-0 -z-10"
+      // place particles behind content but above the page background
+      className="absolute inset-0 z-0 pointer-events-none"
       options={{
         background: { color: "transparent" },
         fpsLimit: 60,
@@ -24,8 +25,8 @@ export default function BackgroundParticles() {
           modes: { repulse: { distance: 100, duration: 0.4 } },
         },
         particles: {
-          color: { value: "#00FFAA" },
-          links: { color: "#00FFAA", distance: 150, enable: true, opacity: 0.2, width: 1 },
+          color: { value: "#ffffff" },
+          links: { color: "#FFFfff", distance: 150, enable: true, opacity: 0.2, width: 1 },
           move: { enable: true, speed: 1.5 },
           number: { value: 60 },
           opacity: { value: 0.3 },
