@@ -1,10 +1,10 @@
-import logo from '../assets/Logo_Vitao.png'
+import logo from '../assets/logotipo.png'
 
 export default function Header() {
     return (
         <div>
-            <nav className='flex justify-around list-none items-center h-50 text-xl text-gray-400'>
-                <div className='flex w-60 justify-between'>
+            <nav className='flex justify-center gap-25 list-none items-center h-35 text-xl text-gray-400'>
+                <div className='flex w-70 justify-between'>
                     <li className='duration-300 hover:scale-105 hover:text-gray-50 cursor-pointer hover:font-semibold'>
                         PORTFOLIO
                     </li>
@@ -14,10 +14,10 @@ export default function Header() {
                 </div>
                 
                 <li className='duration-300 hover:scale-110 hover:cursor-pointer'>
-                    <img className='w-20 hover:drop-shadow-[0_0_60px_#00FFAA]' src={logo} alt="Logotipo" />
+                    <img className='w-15 hover:drop-shadow-[0_0_60px_#00FFAA]' src={logo} alt="Logotipo" />
                 </li>
                 
-                <div className='flex w-60 justify-between'>
+                <div className='flex w-70 justify-between'>
                     <li className='duration-300 hover:scale-105 hover:text-gray-50 cursor-pointer hover:font-semibold'>
                         SOBRE MIM
                     </li>
