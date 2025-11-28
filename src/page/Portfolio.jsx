@@ -12,6 +12,7 @@ import Essenzia from "../assets/ImagemEssenziaApresentacao.png";
 import BackgroundParticles from "../components/BackgroundParticles";
 import CardProjetos from "../components/CardProjetos/CardProjetos";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,7 +69,7 @@ export default function Portfolio() {
         src="https://lottie.host/799f1fa6-79d5-435e-bc33-29a90439132f/mR1rWZ7QnK.json"
         loop
         autoplay
-        className="w-20 fixed right-180 bottom-10 z-50 opacity-40"
+        className="w-20 fixed bottom-10 left-1/2 -translate-x-1/2 z-50"
       />
 
       <main className="text-center px-40">
@@ -141,8 +142,10 @@ export default function Portfolio() {
             />
           </div>
 
-          <div className="h-screen"></div>
         </section>
+        <Footer
+        
+        />
       </main>
     </div>
   );

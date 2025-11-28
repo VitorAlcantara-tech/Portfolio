@@ -85,7 +85,7 @@ const techIconMap = {
   typescript: { icon: <SiJavascript className="text-blue-500 text-2xl" />, label: "TypeScript" },
 };
 
-export default function DetailPage() {
+export default function PaginaDetalhesProjetos() {
   const { id } = useParams();
   const projeto = PROJECTS[id];
 
