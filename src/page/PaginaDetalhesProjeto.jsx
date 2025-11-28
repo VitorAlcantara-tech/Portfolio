@@ -1,19 +1,42 @@
 // page/DetailPage.jsx
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiTailwindcss, SiNextdotjs } from "react-icons/si";
-import { FaArrowLeft, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiPython,
+  SiTypescript,
+} from "react-icons/si";
+import { FaArrowLeft, FaExternalLinkAlt, FaGithub, FaTimes } from "react-icons/fa";
 
 import Header from "../components/Header";
 import BackgroundParticles from "../components/BackgroundParticles";
 
 // Imagens dos projetos
+// 33BarberCrew
 import Barber from "../assets/Imagem33BarberApresentacao.png";
+import BarberFoto1 from "../assets/33Barber01.png";
+import BarberFoto2 from "../assets/33Barber02.png";
+import BarberFoto3 from "../assets/33Barber03.png";
+import BarberFoto4 from "../assets/33Barber04.png";
+
 import ProConnect from "../assets/ImagemProConnectApresentacao.png";
+
+
 import PassaBola from "../assets/ImagemPassaBolaApresentacao.png";
+
+
 import PortoReal from "../assets/ImagemPortoRealApresentacao.png";
+
+
 import AppMelodia from "../assets/ImagemAppMelodiaApresentacao.png";
+
+
 import Essenzia from "../assets/ImagemEssenziaApresentacao.png";
-import Botoes from "../components/CardProjetos/Botoes";
 
 // Mapeia os projetos pelo ID da URL
 const PROJECTS = {
@@ -23,8 +46,9 @@ const PROJECTS = {
     tecnologias: ["html", "css", "javascript"],
     descricao:
       "Site da barbearia 33 Barber Crew, focado em agendamento online, apresentação dos serviços e fortalecimento da identidade visual da marca. Layout moderno, responsivo e otimizado para dispositivos móveis.",
-    github: "https://github.com/seu-repo",
-    site: "https://seuprojeto.com",
+    github: "https://github.com/VitorAlcantara-tech/33BarberCrew_FreeLance",
+    site: "https://33barbercrew.com.br/",
+    galeria: [BarberFoto1, BarberFoto2, BarberFoto3, BarberFoto4], // depois você pode adicionar mais imagens aqui
   },
   "passa-bola": {
     titulo: "PASSA BOLA",
@@ -34,6 +58,7 @@ const PROJECTS = {
       "Plataforma voltada para notícias de futebol feminino e informações sobre copas futuras, com foco em experiência do usuário, desempenho e visual limpo.",
     github: "https://github.com/seu-repo",
     site: "https://seuprojeto.com",
+    galeria: [PassaBola],
   },
   proconnect: {
     titulo: "PROCONNECT",
@@ -43,6 +68,7 @@ const PROJECTS = {
       "Aplicação para conectar profissionais, com cards de perfis, sistema de recomendações e envio de mensagens, construída com foco em performance e UX.",
     github: "https://github.com/seu-repo",
     site: "https://seuprojeto.com",
+    galeria: [ProConnect],
   },
   "porto-real": {
     titulo: "PORTO REAL",
@@ -52,6 +78,7 @@ const PROJECTS = {
       "Ferramenta para monitorar preços de produtos em diferentes fornecedores, facilitando análises e decisões estratégicas de compra.",
     github: "https://github.com/seu-repo",
     site: "https://seuprojeto.com",
+    galeria: [PortoReal], // aqui você coloca telas extras depois
   },
   "app-melodia": {
     titulo: "APP MELODIA",
@@ -61,6 +88,7 @@ const PROJECTS = {
       "Landing page de um app de música focado em playlists inteligentes, descoberta por humor/atividade e visual imersivo em tema dark.",
     github: "https://github.com/seu-repo",
     site: "https://seuprojeto.com",
+    galeria: [AppMelodia],
   },
   essenzia: {
     titulo: "ESSENZIA",
@@ -70,6 +98,7 @@ const PROJECTS = {
       "Projeto voltado para uma marca de produtos, com foco em branding, storytelling e apresentação visual dos produtos.",
     github: "https://github.com/seu-repo",
     site: "https://seuprojeto.com",
+    galeria: [Essenzia],
   },
 };
 
@@ -81,13 +110,14 @@ const techIconMap = {
   react: { icon: <SiReact className="text-cyan-400 text-2xl" />, label: "React" },
   tailwind: { icon: <SiTailwindcss className="text-sky-400 text-2xl" />, label: "TailwindCSS" },
   next: { icon: <SiNextdotjs className="text-white text-2xl" />, label: "Next.js" },
-  python: { icon: <SiHtml5 className="text-[#FFD43B] text-2xl" />, label: "Python" },
-  typescript: { icon: <SiJavascript className="text-blue-500 text-2xl" />, label: "TypeScript" },
+  python: { icon: <SiPython className="text-[#FFD43B] text-2xl" />, label: "Python" },
+  typescript: { icon: <SiTypescript className="text-blue-500 text-2xl" />, label: "TypeScript" },
 };
 
 export default function PaginaDetalhesProjetos() {
   const { id } = useParams();
   const projeto = PROJECTS[id];
+  const [modalImage, setModalImage] = useState(null); // imagem aberta no modal
 
   if (!projeto) {
     return (
@@ -129,11 +159,12 @@ export default function PaginaDetalhesProjetos() {
         <div className="flex flex-col md:flex-row gap-8">
           {/* Imagem grande */}
           <div className="md:w-1/2">
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/5">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/5 group cursor-pointer"
+                 onClick={() => setModalImage(projeto.imagem)}>
               <img
                 src={projeto.imagem}
                 alt={projeto.titulo}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
           </div>
@@ -148,27 +179,110 @@ export default function PaginaDetalhesProjetos() {
                 {projeto.descricao}
               </p>
 
-              <h3 className="text-lg font-semibold mb-3">Tecnologias utilizadas</h3>
+              <h3 className="text-lg font-semibold mb-3">
+                Tecnologias utilizadas
+              </h3>
               <div className="flex flex-wrap items-center gap-4">
                 {projeto.tecnologias.map((tec) => {
                   const tech = techIconMap[tec];
+                  if (!tech) return null;
                   return (
                     <div key={tec} className="flex items-center gap-2">
                       {tech.icon}
-                      <span className="text-sm text-gray-200">{tech.label}</span>
+                      <span className="text-sm text-gray-200">
+                        {tech.label}
+                      </span>
                     </div>
                   );
                 })}
               </div>
             </div>
 
-            <Botoes 
-                github={projeto.github}
-                site={projeto.site}
+            {/* Botões direto aqui */}
+            <div className="mt-8 flex flex-wrap gap-4">
+              {projeto.github && (
+                <a
+                  href={projeto.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-5 py-2 rounded-full bg-[#0A0F1F] border border-gray-700 
+                             text-gray-200 text-sm font-semibold hover:bg-gray-900 hover:border-gray-500 
+                             transition-all"
+                >
+                  <FaGithub className="text-lg" />
+                  <span>Ver no GitHub</span>
+                </a>
+              )}
+
+              {projeto.site && (
+                <a
+                  href={projeto.site}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-5 py-2 rounded-full bg-[#00FFAA] text-black 
+                             text-sm font-semibold hover:bg-[#00e699] transition-all"
+                >
+                  <FaExternalLinkAlt className="text-lg" />
+                  <span>Acessar site</span>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Galeria de imagens adicionais */}
+        {projeto.galeria && projeto.galeria.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-xl font-semibold mb-4">
+              Mais imagens do projeto
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {projeto.galeria.map((img, index) => (
+                <button
+                  key={index}
+                  onClick={() => setModalImage(img)}
+                  className="rounded-2xl overflow-hidden border border-white/5 shadow-lg 
+                             hover:shadow-[0_0_25px_rgba(0,255,170,0.35)] hover:-translate-y-1 
+                             transition-all duration-300 group cursor-pointer"
+                >
+                  <img
+                    src={img}
+                    alt={`${projeto.titulo} - imagem ${index + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
+      </main>
+
+      {/* MODAL DE IMAGEM */}
+      {modalImage && (
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          onClick={() => setModalImage(null)}
+        >
+          <div
+            className="relative max-w-4xl w-[90%]"
+            onClick={(e) => e.stopPropagation()} // impede fechar ao clicar na imagem
+          >
+            <button
+              onClick={() => setModalImage(null)}
+              className="absolute -top-10 right-0 text-white hover:text-[#00FFAA] transition-colors cursor-pointer"
+            >
+              <FaTimes className="text-2xl" />
+            </button>
+
+            <img
+              src={modalImage}
+              alt="Imagem ampliada do projeto"
+              className="w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
             />
           </div>
         </div>
-      </main>
+      )}
     </div>
   );
 }

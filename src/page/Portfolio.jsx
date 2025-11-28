@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
@@ -10,7 +10,7 @@ import PortoReal from "../assets/ImagemPortoRealApresentacao.png";
 import AppMelodia from "../assets/ImagemAppMelodiaApresentacao.png";
 import Essenzia from "../assets/ImagemEssenziaApresentacao.png";
 import BackgroundParticles from "../components/BackgroundParticles";
-import CardProjetos from "../components/CardProjetos/CardProjetos";
+import CardProjetos from "../components/CardProjetos";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -18,6 +18,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Portfolio() {
   const cardsContainerRef = useRef(null);
+  const footerRef = useRef(null);
+  const [mostrarLottie, setMostrarLottie] = useState(true);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -60,17 +62,34 @@ export default function Portfolio() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setMostrarLottie(!entry.isIntersecting); // se o footer aparecer → esconde o lottie
+      },
+      { threshold: 0.1 }
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-[#020617] via-[#021926] to-[#020617] text-white overflow-hidden">
       <Header />
       <BackgroundParticles />
 
-      <DotLottieReact
-        src="https://lottie.host/799f1fa6-79d5-435e-bc33-29a90439132f/mR1rWZ7QnK.json"
-        loop
-        autoplay
-        className="w-20 fixed bottom-10 left-1/2 -translate-x-1/2 z-50"
-      />
+      {mostrarLottie && (
+        <DotLottieReact
+          src="https://lottie.host/799f1fa6-79d5-435e-bc33-29a90439132f/mR1rWZ7QnK.json"
+          loop
+          autoplay
+          className="w-20 fixed bottom-10 left-1/2 -translate-x-1/2"
+        />
+      )}
 
       <main className="text-center px-40">
         <section className="h-full max-w-5xl mx-auto px-4 pt-32 pb-16 text-center relative z-10">
@@ -92,61 +111,41 @@ export default function Portfolio() {
               imagem={Barber}
               titulo="33 BARBER CREW"
               tecnologias={["html", "css", "javascript"]}
-              github="https://github.com/seu-repo"
-              site="https://seuprojeto.com"
-            // descricao="O site da 33 Barber Crew foi criado com o objetivo de facilitar o agendamento de serviços, divulgar a identidade da barbearia e proporcionar uma navegação fluida ao usuário em qualquer dispositivo. O layout é moderno e responsivo, com páginas bem definidas e botões interativos que permitem ao cliente agendar um horário com apenas alguns cliques. Desenvolvido em HTML5, CSS3 e JavaScript."
             />
 
             <CardProjetos
               imagem={PortoReal}
               titulo="PORTO REAL"
               tecnologias={["next", "python", "typescript", "react", "tailwind"]}
-              github="https://github.com/seu-repo"
-              site="https://seuprojeto.com"
-            // descricao=""
             />
 
             <CardProjetos
               imagem={PassaBola}
               titulo="PASSA BOLA"
               tecnologias={["react", "tailwind"]}
-              github="https://github.com/seu-repo"
-              site="https://seuprojeto.com"
-            // descricao="Novo projeto em desenvolvimento."
             />
 
             <CardProjetos
               imagem={ProConnect}
               titulo="PROCONNECT"
               tecnologias={["react", "tailwind"]}
-              github="https://github.com/seu-repo"
-              site="https://seuprojeto.com"
-            // descricao=""
             />
 
             <CardProjetos
               imagem={AppMelodia}
               titulo="APP MELODIA"
               tecnologias={["react", "tailwind"]}
-              github="https://github.com/seu-repo"
-              site="https://seuprojeto.com"
-            // descricao="Landing page do Melodia, um app de música focado em playlists inteligentes, descobertas por humor/atividade e uma experiência visual imersiva em tema dark. Desenvolvido utilizando ReactJS para a construção da interface, Tailwind CSS para estilização responsiva e atraente, e integrado com APIs de música para fornecer funcionalidades dinâmicas aos usuários.."
             />
             <CardProjetos
               imagem={Essenzia}
               titulo="ESSENZIA"
               tecnologias={["react", "tailwind"]}
-              github="https://github.com/seu-repo"
-              site="https://seuprojeto.com"
-            // descricao=""
             />
           </div>
 
         </section>
-        <Footer
-        
-        />
       </main>
+      <Footer ref={footerRef} />
     </div>
   );
 }

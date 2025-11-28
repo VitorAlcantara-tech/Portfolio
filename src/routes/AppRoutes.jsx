@@ -1,7 +1,7 @@
 
 import { createBrowserRouter } from "react-router-dom";
 import Portfolio from "../page/Portfolio";
-import DetailPage from "../page/DetailPage"; // ⬅️ vamos criar já já
+import DetailPage from "../page/PaginaDetalhesProjeto"; // ⬅️ vamos criar já já
 
 export const router = createBrowserRouter([
   { path: "/", element: <Portfolio /> },
