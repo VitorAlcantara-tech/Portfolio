@@ -89,7 +89,7 @@ export default function Resumo() {
                         start: 'top 95%',
                         end: 'bottom 20%',
                         scrub: true,
-                        markers: true,
+                        // markers: true,
                     },
                 }
             )
@@ -322,7 +322,7 @@ export default function Resumo() {
 
 
                         <ButtonDownloadPDF
-                            text="Download do Currículo (PDF)"
+                            text="Baixar Currículo (PDF)"
                             curriculo={cv}
                         />
                     </div>
