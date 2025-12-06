@@ -129,17 +129,17 @@ export default function Resumo() {
 
     return (
         <div>
-            <main>
+            <main className='bg-gradient-to-b from-[#020617] via-[#010f17] to-[#020617]'>
                 <Header />
                 <BackgroundParticles />
 
                 <section
                     ref={sectionRef}
-                    className="flex flex-col items-center text-center lg:px-8"
+                    className="flex flex-col items-center text-center lg:px-8 "
                 >
                     {/* HERO */}
-                    <div className="w-full max-w-4xl min-h-[70vh] sm:min-h-screen flex flex-col justify-center items-center gap-8 text-center">
-                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight -mt-40 uppercase">
+                    <div className="w-full max-w-4xl min-h-[70vh] flex flex-col pt-32 gap-8 text-center">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight  uppercase">
                             Sou Desenvolvedor Full-Stack especializado em{' '}
                             <span className="text-[#00FFAA] font-semibold">next.js</span>,{' '}
                             <span className="text-[#00FFAA] font-semibold">typescript</span> e{' '}
@@ -153,7 +153,7 @@ export default function Resumo() {
                     </div>
 
                     {/* INTRODUÇÃO + EXPERIÊNCIA + FORMAÇÃO */}
-                    <div className="intro-wrapper flex flex-col gap-40 w-full max-w-4xl sm:py-16">
+                    <div className="intro-wrapper flex flex-col gap-40 w-full max-w-4xl ">
                         {/* INTRODUÇÃO */}
                         <div className="grid grid-cols-[220px_1fr] gap-10 w-full">
                             <h1
@@ -190,7 +190,9 @@ export default function Resumo() {
                             </div>
 
                             <div className="text-left intro-text w-full md:w-3/4 relative">
-                                <div className="hidden md:block absolute left-0 top-0 h-full rounded-full w-[5px] bg-gradient-to-b from-[#00FFAA] to-[#0bb37b] timeline-line-experience" />
+                                <div className="hidden md:block absolute left-0 top-0 h-full rounded-full w-[5px] 
+                                    bg-gradient-to-b from-[#00FFAA] to-[#0bb37b] 
+                                    timeline-line-experience drop-shadow-[0_0_7px_#00FFAA]" />
 
                                 <div className="pl-10 flex flex-col gap-10">
                                     <TimelineItem
@@ -216,7 +218,9 @@ export default function Resumo() {
                             <SideSectionTitle titulo="Formação Acadêmica" />
 
                             <div className="text-left intro-text w-full relative">
-                                <div className="hidden md:block absolute left-0 top-0 h-full rounded-full w-[5px] bg-gradient-to-b from-[#00FFAA] to-[#0bb37b] timeline-line-academic" />
+                                <div className="hidden md:block absolute left-0 top-0 h-full rounded-full w-[5px] 
+                                    bg-gradient-to-b from-[#00FFAA] to-[#0bb37b] 
+                                    timeline-line-academic drop-shadow-[0_0_7px_#00FFAA]" />
 
                                 <div className="pl-10 flex flex-col gap-10">
                                     <TimelineItem
@@ -240,7 +244,9 @@ export default function Resumo() {
                             <SideSectionTitle titulo="Certificados" />
 
                             <div className="text-left intro-text w-full relative">
-                                <div className="hidden md:block absolute left-0 top-0 h-full rounded-full w-[5px] bg-gradient-to-b from-[#00FFAA] to-[#0bb37b] timeline-line-certificate" />
+                                <div className="hidden md:block absolute left-0 top-0 h-full rounded-full w-[5px] 
+                                    bg-gradient-to-b from-[#00FFAA] to-[#0bb37b] 
+                                    timeline-line-certificate drop-shadow-[0_0_7px_#00FFAA]" />
 
                                 <div className="pl-10 flex flex-col gap-10">
                                     <TimelineItem

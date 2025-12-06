@@ -10,7 +10,7 @@ export default function ToolSection({ titulo, itens }) {
         {itens.map((item, index) => (
           <li
             key={index}
-            className="tool-item text-sm sm:text-base text-gray-200/90"
+            className="tool-item text-sm sm:text-base text-gray-200/90 uppercase font-bold"
           >
             {item}
           </li>
