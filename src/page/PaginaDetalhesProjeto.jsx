@@ -24,19 +24,42 @@ import BarberFoto2 from "../assets/33Barber02.png";
 import BarberFoto3 from "../assets/33Barber03.png";
 import BarberFoto4 from "../assets/33Barber04.png";
 
-import ProConnect from "../assets/ImagemProConnectApresentacao.png";
-
-
+// PassaBola
 import PassaBola from "../assets/ImagemPassaBolaApresentacao.png";
+import passaBolaFoto1 from "../assets/passaBolaFoto1.png";
+import passaBolaFoto2 from "../assets/passaBolaFoto2.png";
+import passaBolaFoto3 from "../assets/passaBolaFoto3.png";
+import passaBolaFoto4 from "../assets/passaBolaFoto4.png";
 
+// ProConnect
+import ProConnect from "../assets/ImagemProConnectApresentacao.png";
+import proConnectFoto1 from "../assets/proConnectFoto1.png";
+import proConnectFoto2 from "../assets/proConnectFoto2.png";
+import proConnectFoto3 from "../assets/proConnectFoto3.png";
+import proConnectFoto4 from "../assets/proConnectFoto4.png";
 
+// PortoReal
 import PortoReal from "../assets/ImagemPortoRealApresentacao.png";
+import portoRealFoto1 from "../assets/portoRealFoto1.png";
+import portoRealFoto2 from "../assets/portoRealFoto2.png";
+import portoRealFoto3 from "../assets/portoRealFoto3.png";
+import portoRealFoto4 from "../assets/portoRealFoto4.png";
 
-
+// AppMelodia
 import AppMelodia from "../assets/ImagemAppMelodiaApresentacao.png";
+import appMelodiaFoto1 from "../assets/appMelodiaFoto1.png";
+import appMelodiaFoto2 from "../assets/appMelodiaFoto2.png";
+import appMelodiaFoto3 from "../assets/appMelodiaFoto3.png";
+import appMelodiaFoto4 from "../assets/appMelodiaFoto4.png";
 
-
+// Essenzia
 import Essenzia from "../assets/ImagemEssenziaApresentacao.png";
+import essenziaFoto1 from "../assets/essenziaFoto1.png";
+import essenziaFoto2 from "../assets/essenziaFoto2.png";
+import essenziaFoto3 from "../assets/essenziaFoto3.png";
+import essenziaFoto4 from "../assets/essenziaFoto4.png";
+
+import Footer from "../components/Footer";
 
 // Mapeia os projetos pelo ID da URL
 const PROJECTS = {
@@ -55,50 +78,50 @@ const PROJECTS = {
     imagem: PassaBola,
     tecnologias: ["react", "tailwind"],
     descricao:
-      "Plataforma voltada para notícias de futebol feminino e informações sobre copas futuras, com foco em experiência do usuário, desempenho e visual limpo.",
-    github: "https://github.com/seu-repo",
-    site: "https://seuprojeto.com",
-    galeria: [PassaBola],
+      "A aplicação web da Passa a Bola foi desenvolvida com dois objetivos principais: divulgar notícias sobre o universo do futebol feminino e facilitar todo o processo de inscrição e acompanhamento da Copa Passa a Bola. Além de oferecer conteúdos informativos e atualizados, a plataforma permite que equipes e atletas realizem suas inscrições e acompanhem em tempo real a tabela de jogos, a classificação, a artilharia e as notícias relacionadas ao torneio. O foco do desenvolvimento está no front-end, utilizando React, garantindo uma interface moderna, responsiva e de fácil navegação. A aplicação pode ser integrada tanto a uma API própria quanto a serviços externos, como o MockAPI, permitindo flexibilidade no consumo e gerenciamento de dados.",
+    github: "https://github.com/VitorAlcantara-tech/Sprint-PassaBola",
+    site: "https://passabolaa.vercel.app/",
+    galeria: [passaBolaFoto1, passaBolaFoto2, passaBolaFoto3, passaBolaFoto4],
   },
   proconnect: {
     titulo: "PROCONNECT",
     imagem: ProConnect,
     tecnologias: ["react", "tailwind"],
     descricao:
-      "Aplicação para conectar profissionais, com cards de perfis, sistema de recomendações e envio de mensagens, construída com foco em performance e UX.",
-    github: "https://github.com/seu-repo",
-    site: "https://seuprojeto.com",
-    galeria: [ProConnect],
+      "A ProConnect é uma plataforma desenvolvida em React e TailwindCSS que facilita a conexão entre profissionais e pessoas que buscam serviços especializados. O usuário pode pesquisar perfis, visualizar cards com informações dos profissionais, enviar mensagens e fazer recomendações. A interface é leve, responsiva e projetada para tornar a descoberta e o contato com profissionais simples e eficiente.",
+    github: "https://github.com/thiagolima-tech/FrontEnd-GS-2",
+    site: "https://front-end-gs-2-delta.vercel.app/",
+    galeria: [proConnectFoto1, proConnectFoto2, proConnectFoto3, proConnectFoto4],
   },
   "porto-real": {
     titulo: "PORTO REAL",
     imagem: PortoReal,
     tecnologias: ["next", "python", "typescript", "react", "tailwind"],
     descricao:
-      "Ferramenta para monitorar preços de produtos em diferentes fornecedores, facilitando análises e decisões estratégicas de compra.",
-    github: "https://github.com/seu-repo",
-    site: "https://seuprojeto.com",
-    galeria: [PortoReal], // aqui você coloca telas extras depois
+      "A Porto Real é uma plataforma web criada para simplificar a consulta e a comparação de preços entre diversos fornecedores, oferecendo mais agilidade e precisão ao processo de compras. O sistema conta com autenticação de usuários, um dashboard intuitivo e organizado, além de uma área dedicada para visualização detalhada de produtos. A plataforma permite comparar automaticamente os preços praticados por cada fornecedor, destacando as melhores opções de forma clara e objetiva. Dessa forma, empresas e compradores podem tomar decisões mais informadas, reduzir custos e otimizar o tempo gasto na análise de valores. O ambiente foi projetado com foco em usabilidade, oferecendo uma experiência rápida, funcional e responsiva, ideal para quem precisa acompanhar preços e cotações de maneira prática e centralizada.",
+    github: "https://github.com/VitorAlcantara-tech/PortoReal",
+    site: "https://portoreal-teste.vercel.app/",
+    galeria: [portoRealFoto1, portoRealFoto2, portoRealFoto3, portoRealFoto4], // aqui você coloca telas extras depois
   },
   "app-melodia": {
     titulo: "APP MELODIA",
     imagem: AppMelodia,
     tecnologias: ["react", "tailwind"],
     descricao:
-      "Landing page de um app de música focado em playlists inteligentes, descoberta por humor/atividade e visual imersivo em tema dark.",
-    github: "https://github.com/seu-repo",
-    site: "https://seuprojeto.com",
-    galeria: [AppMelodia],
+      "A Melodia é uma landing page criada para apresentar um aplicativo de música moderno, focado em playlists inteligentes e descoberta musical personalizada. O design segue um estilo dark minimalista, trazendo uma experiência visual imersiva e elegante, alinhada ao conceito do app. A página destaca as principais funcionalidades do Melodia, como recomendações baseadas em humor e atividade, criação dinâmica de playlists e uma interface voltada para que o usuário explore novos sons de forma intuitiva. O layout é totalmente responsivo, com animações suaves e seções bem estruturadas que reforçam o posicionamento do aplicativo como uma solução inovadora no universo de streaming musical.",
+    github: "https://github.com/VitorAlcantara-tech/App_Melodia",
+    site: "https://appmelodia.vercel.app/",
+    galeria: [appMelodiaFoto1, appMelodiaFoto2, appMelodiaFoto3, appMelodiaFoto4],
   },
   essenzia: {
     titulo: "ESSENZIA",
     imagem: Essenzia,
     tecnologias: ["react", "tailwind"],
     descricao:
-      "Projeto voltado para uma marca de produtos, com foco em branding, storytelling e apresentação visual dos produtos.",
-    github: "https://github.com/seu-repo",
-    site: "https://seuprojeto.com",
-    galeria: [Essenzia],
+      "A ESSENZIA é um e-commerce voltado para a venda de roupas e acessórios sustentáveis, desenvolvido com HTML, CSS e Bootstrap. O projeto foi pensado para destacar produtos ecológicos, promovendo consumo consciente e reforçando práticas de moda responsável. A plataforma conta com um layout limpo, moderno e totalmente responsivo, facilitando a navegação em qualquer dispositivo. As páginas apresentam categorias de produtos, detalhes individuais, informações sobre materiais sustentáveis e uma experiência de compra simples e intuitiva. O foco da ESSENZIA é unir tecnologia e sustentabilidade, oferecendo um ambiente digital atraente para clientes que buscam opções de vestuário com menor impacto ambiental.",
+    github: "https://github.com/BernardoYuji/CP4-Front-End",
+    site: "https://essenzia-kohl.vercel.app/",
+    galeria: [essenziaFoto1, essenziaFoto2, essenziaFoto3, essenziaFoto4],
   },
 };
 
@@ -160,7 +183,7 @@ export default function PaginaDetalhesProjetos() {
           {/* Imagem grande */}
           <div className="md:w-1/2">
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/5 group cursor-pointer"
-                 onClick={() => setModalImage(projeto.imagem)}>
+              onClick={() => setModalImage(projeto.imagem)}>
               <img
                 src={projeto.imagem}
                 alt={projeto.titulo}
@@ -170,7 +193,7 @@ export default function PaginaDetalhesProjetos() {
           </div>
 
           {/* Conteúdo à direita */}
-          <div className="md:w-1/2 flex flex-col justify-between">
+          <div className="md:w-3/4 flex flex-col justify-between">
             <div>
               <h2 className="text-xl font-semibold mb-3 text-[#00FFAA]">
                 Sobre o projeto
@@ -283,6 +306,7 @@ export default function PaginaDetalhesProjetos() {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import Header from '../components/Header'
 import BackgroundParticles from '../components/BackgroundParticles'
-import cv from '../../public/VitorAlcantara.pdf'
+import cv from '../../src/VitorALCANTARA.pdf'
 import TimelineItem from '../components/Resumo/TimelineItem';
 import SideSectionTitle from '../components/Resumo/SideSectionTitle';
 
