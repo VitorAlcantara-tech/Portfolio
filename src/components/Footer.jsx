@@ -17,7 +17,7 @@ const Footer = forwardRef(function Footer(props, ref) {
   };
 
   return (
-    <footer ref={ref} className="w-full mt-20 bg-[#010812] border-t border-white/10">
+    <footer ref={ref} className="w-full mt-0 bg-[#010812] border-t border-white/10">
       <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
 
         {/* LOGO + NOME */}

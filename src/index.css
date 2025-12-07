@@ -13,11 +13,43 @@ h3 {
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; transform: translate(-50%, 10px); }
-  10% { opacity: 1; transform: translate(-50%, 0px); }
-  90% { opacity: 1; transform: translate(-50%, 0px); }
-  100% { opacity: 0; transform: translate(-50%, 10px); }
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translate(-50%, 0px);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translate(-50%, 0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
 }
+
+@keyframes fade-slide {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-fade-slide {
+  animation: fade-slide 0.4s ease-out forwards;
+}
+
 
 .animate-fade-in-out {
   animation: fadeInOut 2s ease forwards;

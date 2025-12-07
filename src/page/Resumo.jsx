@@ -135,7 +135,7 @@ export default function Resumo() {
 
                 <section
                     ref={sectionRef}
-                    className="flex flex-col items-center text-center lg:px-8 "
+                    className="pb-32 flex flex-col items-center text-center lg:px-8 "
                 >
                     {/* HERO */}
                     <div className="w-full max-w-4xl min-h-[70vh] flex flex-col pt-32 gap-8 text-center">
@@ -324,9 +324,9 @@ export default function Resumo() {
                         />
                     </div>
 
-                    <Footer />
 
                 </section>
+                <Footer />
             </main>
         </div>
     )

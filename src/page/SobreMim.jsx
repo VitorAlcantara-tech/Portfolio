@@ -108,7 +108,7 @@ export default function SobreMim() {
                                 WebkitMaskImage:
                                     "linear-gradient(to bottom, white 0%, white 85%, transparent 100%)",
                                 maskImage:
-                                    "linear-gradient(to bottom, white 0%, white 85%, transparent 100%)",
+                                    "linear-gradient(to bottom, white 0%, white 95%, transparent 100%)",
                             }}
                         >
                             {/* Bio com animação letra a letra */}
@@ -149,11 +149,26 @@ export default function SobreMim() {
                             </div>
 
                         </div>
+                        <div className="mt-4 sm:mt-6 flex justify-start">
+                            <a
+                                href='contato'
+                                aria-label="Download do currículo em PDF"
+                                className="
+                    inline-block bg-[#00FFAA] text-black font-semibold 
+                    py-3 px-6 sm:py-3 sm:px-8 
+                    uppercase text-sm sm:text-base
+                    transition-all duration-300
+                    hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(0,255,170,0.5)]
+                    rounded-md
+                "
+                            >
+                                Vamos Conversar!
+                            </a>
+                        </div>
                     </div>
-
                 </section>
-                <div className='h-screen'></div>
             </main>
+                <Footer />
         </div>
     )
 }

@@ -91,7 +91,7 @@ export default function Portfolio() {
         />
       )}
 
-      <main className="text-center px-40">
+      <main className="text-center px-40 pb-32">
         <section className="h-full max-w-5xl mx-auto px-4 pt-32 pb-16 text-center relative z-10">
           <h1 className="text-sm sm:text-base md:text-lg uppercase tracking-[0.35em] font-semibold z-14">
             Olá! sou Vitor <span className="text-[#00FFAA]">Alcantara</span>
