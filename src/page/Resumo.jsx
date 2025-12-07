@@ -163,22 +163,13 @@ export default function Resumo() {
                             </h1>
 
                             <p
-                                className="intro-text text-base sm:text-lg leading-relaxed text-justify"
+                                className="intro-text text-base sm:text-lg leading-relaxed text-justify sm:text-left"
                             >
-                                Sou um desenvolvedor full-stack com foco em aplicar soluções práticas e eficientes
-                                para demandas do dia a dia. Possuo sólidos conhecimentos em HTML, CSS e JavaScript,
-                                além de experiência com tecnologias avançadas de frontend, como React, Typescript e
-                                Tailwind CSS.
-                                <br />
-                                <br />
-                                No backend, trabalho com Python, Node.js e Next.js, atuando tanto em automações quanto
-                                no desenvolvimento de aplicações completas. Tenho familiaridade com SQL, o que me
-                                permite compreender e manipular dados de forma estruturada.
-                                <br />
-                                <br />
-                                Atualmente, busco oportunidades que me permitam expandir minha experiência
-                                profissional, aprimorar minhas competências técnicas e contribuir para projetos que
-                                agreguem valor ao negócio.
+                                Sou um desenvolvedor full-stack focado em criar soluções práticas, eficientes e alinhadas às necessidades do dia a dia. Tenho experiência na construção de interfaces modernas, intuitivas e bem estruturadas, sempre priorizando desempenho, organização e uma boa experiência para o usuário.
+                                <br /><br />
+                                No desenvolvimento do lado servidor, atuo tanto na implementação de funcionalidades quanto na criação de automações e integrações que otimizam processos. Também trabalho com bancos de dados de forma estruturada, o que me permite analisar, organizar e manipular informações com clareza e precisão.
+                                <br /><br />
+                                Atualmente, busco oportunidades que me permitam evoluir profissionalmente, ampliar minha visão técnica e contribuir para projetos que realmente façam diferença e gerem valor para o negócio.
                             </p>
                         </div>
 

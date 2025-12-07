@@ -5,53 +5,59 @@ import vitorFoto from "../assets/Vitor.png";
 import Footer from '../components/Footer';
 
 
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default function SobreMim() {
-    const bioRef = useRef(null)
 
     useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger)
+        gsap.registerPlugin(ScrollTrigger);
 
-        const element = bioRef.current
-        if (!element) return
+        const block = document.querySelector(".bio-block");
+        if (!block) return;
 
-        // Quebra o texto em spans por letra
-        const splitTextIntoSpans = (el) => {
-            const text = el.innerText
-            const chars = text.split("")
-            el.innerHTML = ""
+        const paragraphs = block.querySelectorAll("p");
+        const allLetters = [];
 
-            chars.forEach((char) => {
-                const span = document.createElement("span")
-                span.textContent = char
-                span.style.opacity = 0 // começa invisível
-                span.style.filter = "blur(4px)" // blur inicial
-                el.appendChild(span)
-            })
-        }
+        paragraphs.forEach((p) => {
+            const text = p.textContent;       // pega só texto
+            p.textContent = "";               // limpa o conteúdo
 
-        splitTextIntoSpans(element)
+            text.split("").forEach((char) => {
+                const span = document.createElement("span");
 
-        const letters = element.querySelectorAll("span")
+                if (char === " ") {
+                    span.innerHTML = "&nbsp;";     // espaço real
+                    span.classList.add("space-span");
+                } else {
+                    span.textContent = char;
+                }
 
-        gsap.to(letters, {
+                span.style.opacity = 0.15;
+                span.style.display = "inline-block";
+
+                p.appendChild(span);
+                allLetters.push(span);
+            });
+
+        });
+
+        gsap.to(allLetters, {
             opacity: 1,
-            filter: "blur(0px)",
             ease: "none",
-            duration: 1,
-            stagger: 0.02,
+            stagger: 0.02,                     // letra a letra no bloco inteiro
             scrollTrigger: {
-                trigger: element,
-                start: "top 90%",
-                end: "bottom 70%",
-                scrub: true, // anima junto com o scroll
+                trigger: block,
+                start: "top 85%",
+                end: "bottom 40%",
+                scrub: true,
                 // markers: true,
             },
-        })
-    }, [])
+        });
+    }, []);
+
+
 
 
 
@@ -96,42 +102,52 @@ export default function SobreMim() {
                             com <span className="text-[#00FFAA] font-semibold">propósito</span>.
                         </h1>
 
-                        {/* Wrapper com máscara gradiente */}
                         <div
                             className="my-20"
                             style={{
                                 WebkitMaskImage:
-                                    "linear-gradient(to bottom, transparent 0%, white 5%, white 85%, transparent 100%)",
+                                    "linear-gradient(to bottom, white 0%, white 85%, transparent 100%)",
                                 maskImage:
-                                    "linear-gradient(to bottom, transparent 0%, white 5%, white 85%, transparent 100%)",
+                                    "linear-gradient(to bottom, white 0%, white 85%, transparent 100%)",
                             }}
                         >
-
                             {/* Bio com animação letra a letra */}
-                            <p
-                                ref={bioRef}
-                                className="text-base sm:text-lg leading-relaxed text-slate-200"
-                            >
-                                Estudante de Engenharia de Software na FIAP - SP, em busca de
-                                oportunidades para atuar como desenvolvedor e aplicar na prática os
-                                conhecimentos adquiridos tanto na graduação quanto em cursos
-                                extracurriculares. Tenho interesse genuíno em tecnologia e estou
-                                sempre disposto em buscar novos aprendizados que possam contribuir para
-                                minha evolução profissional e pessoal.
-                                <br /><br />
-                                Me considero uma pessoa comunicativa e colaborativa, com facilidade
-                                para trabalhar em equipe e compreender a importância da boa interação
-                                para o sucesso de um projeto. Gosto de enfrentar desafios que testem
-                                meus conhecimentos ou que me incentivem a aprender ainda mais. Sou
-                                proativo, comprometido com prazos e tenho um forte senso de
-                                responsabilidade.
-                                <br /><br />
-                                Fora do ambiente acadêmico e profissional, sou apaixonado por
-                                esportes — especialmente o judô, no qual sou atleta faixa preta. Essa
-                                arte marcial me ensinou valores como disciplina, respeito e
-                                generosidade, princípios que levo comigo tanto dentro quanto fora do
-                                tatame.
-                            </p>
+                            <div className="bio-block text-base sm:text-xl leading-relaxed text-slate-200 flex flex-col gap-6">
+                                <p>
+                                    Estudante de Engenharia de Software na FIAP - SP, em busca de
+                                    oportunidades para atuar como desenvolvedor e aplicar na prática os
+                                    conhecimentos adquiridos tanto na graduação quanto em cursos
+                                    extracurriculares. Tenho interesse genuíno em tecnologia e estou
+                                    sempre disposto em buscar novos aprendizados que possam contribuir para
+                                    minha evolução profissional e pessoal.
+                                </p>
+
+                                <p>
+                                    Me considero uma pessoa comunicativa e colaborativa, com facilidade
+                                    para trabalhar em equipe e compreender a importância da boa interação
+                                    para o sucesso de um projeto. Gosto de enfrentar desafios que testem
+                                    meus conhecimentos ou que me incentivem a aprender ainda mais. Sou
+                                    proativo, comprometido com prazos e tenho um forte senso de
+                                    responsabilidade.
+                                </p>
+
+                                <p>
+                                    Fora do ambiente acadêmico e profissional, sou apaixonado por
+                                    esportes — especialmente o judô, no qual sou graduado faixa preta. Essa
+                                    arte marcial me ensinou valores como disciplina, respeito e
+                                    generosidade, princípios que levo comigo tanto dentro quanto fora do
+                                    tatame.
+                                </p>
+
+                                <p>
+                                    Atualmente atuo na Real Soluções como estagiário em Desenvolvimento de Sistemas,
+                                    onde estou adquirindo conhecimento e experiência em sistemas reais, entendendo
+                                    como funciona o ciclo completo de criação, manutenção e evolução de softwares.
+                                    Trabalho com ferramentas de versionamento e tenho contato com metodologias ágeis,
+                                    acompanhando dailys e aprendendo sobre sprints.
+                                </p>
+                            </div>
+
                         </div>
                     </div>
 
