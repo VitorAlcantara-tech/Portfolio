@@ -17,9 +17,15 @@ import Footer from "../components/Footer";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Portfolio() {
+
   const cardsContainerRef = useRef(null);
   const footerRef = useRef(null);
   const [mostrarLottie, setMostrarLottie] = useState(true);
+
+  useEffect(() => {
+    document.title = "Portfolio — Vitor Alcantara";
+  }, []);
+
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -91,22 +97,71 @@ export default function Portfolio() {
         />
       )}
 
-      <main className="text-center px-40 pb-32">
-        <section className="h-full max-w-5xl mx-auto px-4 pt-32 pb-16 text-center relative z-10">
-          <h1 className="text-sm sm:text-base md:text-lg uppercase tracking-[0.35em] font-semibold z-14">
-            Olá! sou Vitor <span className="text-[#00FFAA]">Alcantara</span>
+      <main className="text-center px-4 sm:px-8 lg:px-40 pb-32">
+
+        <section
+          className="
+    min-h-[80vh]           /* mobile: ocupa boa parte da tela */
+    flex flex-col items-center justify-center
+    max-w-5xl mx-auto 
+    px-4 pt-24 pb-16 
+    text-center 
+    relative z-10
+  "
+        >
+          <h1
+            className="
+      text-xs               /* base (mobile) */
+      sm:text-sm            /* >= 640px */
+      md:text-base          /* >= 768px */
+      uppercase 
+      tracking-[0.35em] 
+      font-semibold 
+      text-slate-200
+    "
+          >
+            Olá! sou Vitor{" "}
+            <span className="text-[#00FFAA]">Alcantara</span>
           </h1>
 
-          <p className="mt-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase leading-tight ">
+          <p
+            className="
+      mt-6 
+      text-2xl           /* tablet pequeno */
+      md:text-3xl           /* tablet */
+      lg:text-4xl           /* desktop */
+      xl:text-5xl           /* telas grandes */
+      font-bold 
+      uppercase 
+      leading-tight
+      text-slate-100
+      max-w-4xl             /* limita a largura do texto em telas grandes */
+    "
+          >
             Desenvolvedor full-stack, apaixonado por tecnologia e por criar soluções
             que facilitam a vida das pessoas.
           </p>
         </section>
 
-        <section className="h-full mt-40" ref={cardsContainerRef}>
-          <h1 className="text-4xl uppercase font-semibold my-6">Principais Projetos</h1>
 
-          <div className="flex justify-around flex-wrap">
+        <section
+          className="mt-32 mb-20 px-4 sm:px-8 lg:px-20"
+          ref={cardsContainerRef}
+        >
+          <h1 className="text-3xl sm:text-4xl uppercase font-semibold text-center mb-12">
+            Principais Projetos
+          </h1>
+
+          <div
+            className="
+      grid
+      grid-cols-1           /* mobile */
+      sm:grid-cols-2        /* >= 640px */
+      lg:grid-cols-3        /* >= 1024px */
+      gap-10
+      place-items-center
+    "
+          >
             <CardProjetos
               imagem={Barber}
               titulo="33 BARBER CREW"
@@ -136,14 +191,15 @@ export default function Portfolio() {
               titulo="APP MELODIA"
               tecnologias={["react", "tailwind"]}
             />
+
             <CardProjetos
               imagem={Essenzia}
               titulo="ESSENZIA"
               tecnologias={["react", "tailwind"]}
             />
           </div>
-
         </section>
+
       </main>
       <Footer ref={footerRef} />
     </div>

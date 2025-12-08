@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import BackgroundParticles from '../components/BackgroundParticles'
-import vitorFoto from "../assets/Vitor.png";
 import Footer from '../components/Footer';
 
+// Images
+import vitorFoto from "../assets/Vitor.png";
+import image1 from "../assets/aboutMeImage1.jpg";
+import image2 from "../assets/aboutMeImage2.jpg";
+import image3 from "../assets/aboutMeImage3.jpg";
+import image4 from "../assets/aboutMeImage4.jpg";
+import image5 from "../assets/aboutMeImage5.jpg";
+import image6 from "../assets/aboutMeImage6.jpg";
 
 import { useLayoutEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default function SobreMim() {
+
+    useEffect(() => {
+        document.title = "Sobre — Vitor Alcantara";
+    }, []);
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -69,7 +80,7 @@ export default function SobreMim() {
                 <BackgroundParticles />
 
                 {/* CONTAINER PRINCIPAL */}
-                <section className="flex flex-col lg:flex-row items-center lg:items-start gap-16 py-32 max-w-6xl mx-auto">
+                <section className="flex flex-col lg:flex-row items-center lg:items-start gap-16 py-32 max-w-7xl mx-auto">
 
                     {/* FOTO DO VITOR */}
                     <div className="">
@@ -106,9 +117,9 @@ export default function SobreMim() {
                             className="my-20"
                             style={{
                                 WebkitMaskImage:
-                                    "linear-gradient(to bottom, white 0%, white 85%, transparent 100%)",
-                                maskImage:
                                     "linear-gradient(to bottom, white 0%, white 95%, transparent 100%)",
+                                maskImage:
+                                    "linear-gradient(to bottom, white 0%, white 100%, transparent 100%)",
                             }}
                         >
                             {/* Bio com animação letra a letra */}
@@ -165,10 +176,41 @@ export default function SobreMim() {
                                 Vamos Conversar!
                             </a>
                         </div>
+
+                        {/* GRID DE IMAGENS */}
+                        <div
+                            className="
+                                grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
+                                gap-6 md:gap-4 mt-16
+                                p-2 sm:p-0      /* padding para “destacar” as imagens no mobile */
+                            "
+                        >
+
+
+                            {[image1, image2, image3, image4, image5, image6].map((src, i) => (
+                                <div
+                                    key={i}
+                                    className="w-full aspect-square overflow-hidden"
+                                >
+                                    <img
+                                        src={src}
+                                        alt={`foto-${i}`}
+                                        className="
+                                            w-full h-full object-cover
+                                            transition-transform duration-500
+                                            hover:scale-110
+                                        "
+                                    />
+                                </div>
+
+                            ))}
+
+                        </div>
+
                     </div>
                 </section>
             </main>
-                <Footer />
+            <Footer />
         </div>
     )
 }
