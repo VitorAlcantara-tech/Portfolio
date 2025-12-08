@@ -123,7 +123,14 @@ export default function SobreMim() {
                             }}
                         >
                             {/* Bio com animação letra a letra */}
-                            <div className="bio-block text-base sm:text-xl leading-relaxed text-slate-200 flex flex-col gap-6">
+                            <div className="
+                                bio-block 
+                                text-base sm:text-xl 
+                                leading-relaxed text-slate-200 
+                                flex flex-col gap-6
+                                
+                            ">
+
                                 <p>
                                     Estudante de Engenharia de Software na FIAP - SP, em busca de
                                     oportunidades para atuar como desenvolvedor e aplicar na prática os

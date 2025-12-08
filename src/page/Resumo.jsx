@@ -144,7 +144,7 @@ export default function Resumo() {
                 >
                     {/* HERO */}
                     <div className="w-full max-w-4xl min-h-[60vh] sm:min-h-[70vh] flex flex-col pt-60 sm:pt-32 gap-6 sm:gap-8">
-                        <h1 className="text-[25px] sm:text-3xl lg:text-5xl font-medium leading-tight uppercase">
+                        <h1 className="text-[25px] sm:text-3xl lg:text-5xl font-semibold leading-tight uppercase">
                             Sou Desenvolvedor Full-Stack especializado em{" "}
                             <span className="text-[#00FFAA] font-semibold">next.js</span>,{" "}
                             <span className="text-[#00FFAA] font-semibold">typescript</span> e{" "}
@@ -179,6 +179,7 @@ export default function Resumo() {
         leading-relaxed 
         text-slate-200 
         text-justify md:text-left
+        break-normal whitespace-normal
       "
                             >
                                 Sou um desenvolvedor full-stack focado em criar soluções práticas,
