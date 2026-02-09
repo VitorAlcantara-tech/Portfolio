@@ -11,6 +11,7 @@ import AppMelodia from "../assets/ImagemAppMelodiaApresentacao.png";
 import Essenzia from "../assets/ImagemEssenziaApresentacao.png";
 import BackgroundParticles from "../components/BackgroundParticles";
 import CardProjetos from "../components/CardProjetos";
+import CardServicos from "../components/CardServicos";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -143,6 +144,98 @@ export default function Portfolio() {
           </p>
         </section>
 
+
+        <section className="mt-24 mb-20 px-4 sm:px-8 lg:px-20">
+          <h2 className="text-3xl sm:text-4xl uppercase font-semibold text-center mb-12">
+            Serviços
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <CardServicos
+              titulo="Criação de web sites"
+              descricao="Sites modernos, rápidos e focados em conversão, com layout claro e navegação simples. Todo projeto é 100% responsivo, pensado para entregar ótima experiência em qualquer tela."
+              icone={(
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                >
+                  <path
+                    d="M3 5h18v10H3z"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M8 19h8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              )}
+            />
+
+            <CardServicos
+              titulo="Aplicativos"
+              descricao="Apps com foco em performance, usabilidade e integrações inteligentes. Soluções sob medida para automatizar processos e escalar seu negócio com segurança."
+              icone={(
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                >
+                  <rect
+                    x="6"
+                    y="3"
+                    width="12"
+                    height="18"
+                    rx="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M11 17h2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              )}
+            />
+
+            <CardServicos
+              titulo="Landing Pages"
+              descricao="Páginas objetivas e persuasivas, com foco total em conversão. Estrutura clara, copy estratégica e design que valoriza sua oferta."
+              icone={(
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                >
+                  <path
+                    d="M4 6h16v12H4z"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M7 9h6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M7 13h10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              )}
+            />
+          </div>
+        </section>
 
         <section
           className="mt-32 mb-20 px-4 sm:px-8 lg:px-20"
