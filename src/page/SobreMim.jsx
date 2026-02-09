@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from "react-router-dom";
 import Header from '../components/Header'
 import BackgroundParticles from '../components/BackgroundParticles'
 import Footer from '../components/Footer';
@@ -12,65 +13,12 @@ import image4 from "../assets/aboutMeImage4.jpg";
 import image5 from "../assets/aboutMeImage5.jpg";
 import image6 from "../assets/aboutMeImage6.jpg";
 
-import { useLayoutEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default function SobreMim() {
 
     useEffect(() => {
         document.title = "Sobre — Vitor Alcantara";
     }, []);
-
-    useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const block = document.querySelector(".bio-block");
-        if (!block) return;
-
-        const paragraphs = block.querySelectorAll("p");
-        const allLetters = [];
-
-        paragraphs.forEach((p) => {
-            const text = p.textContent;       // pega só texto
-            p.textContent = "";               // limpa o conteúdo
-
-            text.split("").forEach((char) => {
-                const span = document.createElement("span");
-
-                if (char === " ") {
-                    span.innerHTML = "&nbsp;";     // espaço real
-                    span.classList.add("space-span");
-                } else {
-                    span.textContent = char;
-                }
-
-                span.style.opacity = 0.15;
-                span.style.display = "inline-block";
-
-                p.appendChild(span);
-                allLetters.push(span);
-            });
-
-        });
-
-        gsap.to(allLetters, {
-            opacity: 1,
-            ease: "none",
-            stagger: 0.02,                     // letra a letra no bloco inteiro
-            scrollTrigger: {
-                trigger: block,
-                start: "top 85%",
-                end: "bottom 40%",
-                scrub: true,
-                // markers: true,
-            },
-        });
-    }, []);
-
-
-
-
 
 
     return (
@@ -124,11 +72,11 @@ export default function SobreMim() {
                         >
                             {/* Bio com animação letra a letra */}
                             <div className="
-                                bio-block 
-                                text-base sm:text-xl 
-                                leading-relaxed text-slate-200 
+                                bio-block bio-fade
+                                text-base sm:text-xl
+                                leading-7 sm:leading-8 text-slate-200
+                                max-w-2xl
                                 flex flex-col gap-6
-                                
                             ">
 
                                 <p>
@@ -168,9 +116,9 @@ export default function SobreMim() {
 
                         </div>
                         <div className="mt-4 sm:mt-6 flex justify-start">
-                            <a
-                                href='contato'
-                                aria-label="Download do currículo em PDF"
+                            <Link
+                                to="/contato"
+                                aria-label="Encaminha para a seção de contato"
                                 className="
                     inline-block bg-[#00FFAA] text-black font-semibold 
                     py-3 px-6 sm:py-3 sm:px-8 
@@ -181,7 +129,7 @@ export default function SobreMim() {
                 "
                             >
                                 Vamos Conversar!
-                            </a>
+                            </Link>
                         </div>
 
                         {/* GRID DE IMAGENS */}

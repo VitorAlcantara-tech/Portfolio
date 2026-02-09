@@ -54,3 +54,39 @@ h3 {
 .animate-fade-in-out {
   animation: fadeInOut 2s ease forwards;
 }
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bio-fade p {
+  opacity: 0;
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.bio-fade p:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.bio-fade p:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.bio-fade p:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bio-fade p {
+    opacity: 1;
+    animation: none;
+  }
+}
