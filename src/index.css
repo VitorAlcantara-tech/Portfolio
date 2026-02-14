@@ -2,10 +2,33 @@
 
 body {
   background-color: #070918;
-  cursor: url('/cursor.png'), auto;
+  cursor: url('/CursorMira.png') 16 16, auto;
   color: white;
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
+}
+
+:root {
+  scrollbar-color: #00FFAA #070918;
+  scrollbar-width: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #070918;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00FFAA;
+  border-radius: 999px;
+  border: 2px solid #070918;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0bb37b;
 }
 
 h3 {
